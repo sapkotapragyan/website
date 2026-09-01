@@ -1,0 +1,37 @@
+#pi p {
+  margin: 0.4rem 0;
+  font-weight: bold;
+  margin-left: 1.5rem;
+}
+
+table {
+  width: 95%;
+  border-collapse: collapse;
+  margin: 1.5rem auto;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #6e8efb;
+  color: white;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+#ss {
+  font-weight: bold;
+  margin-left: 1.5rem;
+}

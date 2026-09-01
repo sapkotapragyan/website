@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #111, #222);
+        color: #fff;
+        overflow: hidden;
+        height: 100vh;
+      }
+
+      /* Welcome animation */
+      .welcome-text {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3em;
+        color: #e63946; /* soft red */
+        opacity: 0;
+        animation: fadeInOut 4s ease forwards;
+      }
+
+      @keyframes fadeInOut {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, -60%);
+        }
+        25% {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+        75% {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-50%, -40%);
+        }
+      }
+
+      /* Login container slide-up animation */
+      .login-container {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: slideUp 2.5s ease forwards;
+        animation-delay: 3s; /* starts after welcome finishes */
+      }
+
+      @keyframes slideUp {
+        from {
+          bottom: -100%;
+        }
+        to {
+          bottom: 0;
+        }
+      }
+
+      /* Login card styling */
+      .login-card {
+        background-color: #222;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        width: 350px;
+        color: white;
+      }
+
+      .login-card h2 {
+        text-shadow: 2px 2px 5px #e63946;
+      }
+
+      .btn-login {
+        background-color: #e63946;
+        border: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .btn-login:hover {
+        background-color: #c72d3a;
+      }
+
+      #alert_username,
+      #alert_password {
+        color: #e63946;
+        font-size: 0.9em;
+        margin-top: -8px;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Animated welcome text -->
+    <div class="welcome-text">Welcome to my Website</div>
+
+    <!-- Login content -->
+    <div class="login-container">
+      <div class="login-card shadow">
+        <h2 class="text-center mb-3">Log in to access dashboard</h2>
+        <!-- <p class="text-center mb-4 text-muted">Log in to access dashboard</p> -->
+        <form>
+          <input
+            type="text"
+            id="username"
+            class="form-control mb-3"
+            placeholder="Enter Username"
+            required
+          />
+          <div id="alert_username"></div>
+          <input
+            type="password"
+            id="password"
+            class="form-control mb-4"
+            placeholder="Enter Password"
+            required
+          />
+          <div id="alert_password"></div>
+          <button type="button" class="btn btn-login w-100" id="loginButton">
+            Log In
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginButton")
+        .addEventListener("click", function () {
+          const username = document.getElementById("username").value.trim();
+          const password = document.getElementById("password").value.trim();
+
+          document.getElementById("alert_username").innerHTML = "";
+          document.getElementById("alert_password").innerHTML = "";
+
+          if (username === "" && password === "") {
+            document.getElementById("alert_username").innerHTML =
+              "Please enter username";
+            document.getElementById("alert_password").innerHTML =
+              "Please enter Password";
+            return;
+          }
+
+          if (username === "" && password === "pragyansapkota") {
+            document.getElementById("alert_username").innerHTML =
+              "Please enter username";
+          }
+
+          if (username === "pragyansapkota" && password === "") {
+            document.getElementById("alert_password").innerHTML =
+              "Please enter Password";
+          }
+
+          if (username != "pragyansapkota" || password != "pragyansapkota") {
+            document.getElementById("alert_password").innerHTML =
+              "Invalid Username or Password";
+          }
+
+          if (username === "pragyansapkota" && password === "pragyansapkota") {
+            window.location.href = "project.html";
+          }
+        });
+    </script>
+  </body>
+</html>
