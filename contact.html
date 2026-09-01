@@ -158,70 +158,8 @@
       <iframe
         src="https://maps.google.com/maps?q=kathmandu&t=&z=13&ie=UTF8&iwloc=&output=embed"
       ></iframe>
-
-      <!-- Form -->
-      <div class="contact-form">
-        <form action="mailto:pragyansapkota67@gmail.com" method="post">
-          <div class="mb-3">
-            <label for="name" class="form-label">Your Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              placeholder="Enter your full name *"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Your Email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              placeholder="Enter your email *"
-              required
-            />
-          </div>
-          <div class="form-floating mb-3">
-            <textarea
-              class="form-control"
-              placeholder="Leave a comment here"
-              id="floatingTextarea2"
-              style="height: 100px"
-              required
-            ></textarea>
-            <label for="floatingTextarea2"
-              >Leave a comment for @PragyanSapkota *</label
-            >
-
-            <div id="alert_message"></div>
-          </div>
-          <button type="button" class="btn btn-login w-100" id="loginButton">
-            Submmit
-          </button>
-        </form>
-      </div>
-    </div>
     <footer>
       <p>&copy; 2026 Pragyan Sapkota. All rights reserved.</p>
     </footer>
-
-    <script>
-      document
-        .getElementById("loginButton")
-        .addEventListener("click", function () {
-          const name = document.getElementById("name").value.trim();
-          const email = document.getElementById("email").value.trim();
-          const floatingTextarea2 = document
-            .getElementById("floatingTextarea2")
-            .value.trim();
-          if (!name || !email || !floatingTextarea2) {
-            document.getElementById('alert_message').innerHTML= `Incomplete form`;
-          } else {
-             alert("Message successfully sent");
-             window.location.href='contact.html';
-          }
-        });
-    </script>
   </body>
 </html>
