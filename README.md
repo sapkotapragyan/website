@@ -71,6 +71,7 @@ Explore my portfolio website:
 ## 🔮 Future Improvements
 
 - Improve UI/UX and visual consistency.
+- Dynamic web building using React and Node.js
 - Add more interactive JavaScript features.
 - Introduce additional projects and achievements.
 - Enhance mobile responsiveness.
